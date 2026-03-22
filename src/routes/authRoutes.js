@@ -7,10 +7,14 @@ const {
  login,
  forgotPassword,
  verifyOtp,
- resetPassword
+ resetPassword,
+ getUsers
 } = require("../controllers/authController")
 
 const { registerValidator } = require("../validators/authValidator")
+
+router.get("/users", getUsers)
+
 router.post("/register", registerValidator, register)
 
 router.post("/register",register)
