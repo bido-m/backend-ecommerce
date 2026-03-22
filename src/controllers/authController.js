@@ -7,6 +7,14 @@ const { sendOtpEmail } = require("../services/emailService");
 
 ////////////////////////////////////////////////////////////
 
+exports.getUsers = async (req,res)=>{
+  const users = await User.find();
+
+  res.json(users)
+}
+
+////////////////////////////////////////////////////////////
+
 exports.register = async (req,res)=>{
 
  const {name,email,password} = req.body
